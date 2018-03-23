@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <title>设置</title>
+    <link rel="stylesheet" href="css/iview.css" >
+    <script src="lib/vue.min.js"></script>
+    <script src="lib/iview.min.js"></script>
+</head>
+<body>
+<!-- main start -->
+<div id="app" v-cloak>
+
+
+        <div class="ivu-form-item-content" style="margin-left: 80px;margin-top: 80px;margin-right: 80px;" label="主服务器IP">
+            <i-input v-model="conf.server_ip">
+                <span slot="prepend">主服务器IP&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </i-input>
+        </div>
+        <br>
+        <div class="ivu-form-item-content" style="margin-left: 80px;margin-right: 80px;"label="媒体存储路径">
+            <i-input v-model="conf.dir">
+                <span slot="prepend">媒体存储路径</span>
+            </i-input>
+        </div>
+        <br>
+        <div class="ivu-form-item-content" style="margin-left: 80px;margin-right: 80px;" label="重试次数">
+            <i-input v-model="conf.retry">
+                <span slot="prepend">重试次数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </i-input>
+        </div>
+        <br>
+        <div class="ivu-form-item-content" style="margin-left: 80px">
+            <i-button type="primary" @click="update" >保存并重启</i-button>
+        </div>
+
+</div>
+<script type="text/javascript" src="set.js"></script>
+
+<script>
+
+
+</script>
+</body>
+</html>

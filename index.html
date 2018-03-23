@@ -1,19 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+  <title>敏求流媒体服务</title>
+  <link rel="stylesheet" href="css/iview.css" >
 
-    <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
-    </script>
-  </body>
+  <script src="lib/vue.min.js"></script>
+  <script src="lib/iview.min.js"></script>
+</head>
+<body>
+<!-- main start -->
+<div id="app" v-cloak>
+  <Alert v-if="status == 0" show-icon>初始化完成等待连接</Alert>
+  <Alert v-if="status == 1" type="success" show-icon>已连接到主服务器</Alert>
+  <Alert v-if="status == 2" type="warning" show-icon>与主服务器断开连接</Alert>
+  <Alert v-if="status == 3" type="error" show-icon>连接主服务器出错</Alert>
+  <i-table :loading="loading"  height="700" :columns="columns1" :data="lives"></i-table>
+</div>
+<script type="text/javascript" src="renderer.js"></script>
+
+<script>
+
+
+</script>
+</body>
 </html>
